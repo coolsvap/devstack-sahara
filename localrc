@@ -1,0 +1,28 @@
+###IP Configuration
+HOST_IP=<<IP_ADDRESS>>
+
+#Credentials
+ADMIN_PASSWORD=<<password>>
+MYSQL_PASSWORD=<<password>
+RABBIT_PASSWORD=<<password>
+SERVICE_PASSWORD=<<password>
+SERVICE_TOKEN=<<password>
+
+#Swift Requirements
+enable_service s-proxy s-object s-container s-account
+SWIFT_REPLICAS=1
+SWIFT_HASH=password
+
+FLOATING_RANGE=<<Floating IP Range>>
+
+# Enable auto assignment of floating IPs. By default Sahara expects this setting to be enabled
+EXTRA_OPTS=(auto_assign_floating_ip=True)
+
+#Log Output
+LOGFILE=/opt/stack/logs/stack.sh.log
+VERBOSE=True
+LOG_COLOR=False
+SCREEN_LOGDIR=/opt/stack/logs
+
+# Enable Sahara
+ENABLED_SERVICES+=,sahara
